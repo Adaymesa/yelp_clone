@@ -1,9 +1,11 @@
 <% if @restaurants.any? %>
   <%@restaurants.each do |restaurant| %>
     <h2> <%= link_to restaurant.name, restaurant_path(restaurant) %> </h2>
-    <% end %>
+    <h3> <%= restaurant.description %> </h3>
+    <%= link_to "Edit #{restaurant.name}", edit_restaurant_path(restaurant) %>
+  <% end %>
 <% else %>
   <h1>No restaurants yet </h1>
 <% end %>
 
-<a href='/restaurants/new'>Add a restaurant</a>
+<p><a href='/restaurants/new'>Add a restaurant</a></p>
