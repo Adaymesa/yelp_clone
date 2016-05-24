@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  root to: "restaurants#index"
+
+  devise_for :users
   # get 'restaurants' => 'restaurants#index'
   resources :restaurants do 
     resources :reviews
